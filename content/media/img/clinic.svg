@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title">
+  <title id="title">Clinic entrance</title>
+  <rect width="800" height="600" fill="#e1f1f1"/>
+  <rect x="120" y="110" width="560" height="430" rx="12" fill="#fffdf7"/>
+  <rect x="170" y="220" width="180" height="250" fill="#78aab0"/>
+  <rect x="450" y="220" width="180" height="250" fill="#78aab0"/>
+  <rect x="340" y="160" width="120" height="90" rx="8" fill="#dd5c43"/>
+  <path d="M380 180h40v20h20v40h-20v20h-40v-20h-20v-40h20z" fill="#fffdf7"/>
+  <path d="M0 540h800v60H0z" fill="#5e9968"/>
+</svg>

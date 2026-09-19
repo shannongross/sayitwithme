@@ -1,0 +1,102 @@
+:root {
+  font-family: Georgia, serif;
+  color: #173943;
+  background: #e6f2ef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.start,
+.home,
+.card {
+  min-height: 100dvh;
+}
+
+.start {
+  width: 100%;
+  color: #fffdf7;
+  background: #16756f;
+  font-size: 9rem;
+}
+
+.home,
+.card {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.lesson {
+  width: min(100%, 420px);
+  padding: 0;
+  overflow: hidden;
+  background: #fffdf7;
+  border-radius: 8px;
+}
+
+.lesson img,
+.scene {
+  display: block;
+  width: 100%;
+}
+
+.card {
+  align-content: space-between;
+  gap: 24px;
+}
+
+.scene {
+  max-width: 560px;
+  border-radius: 8px;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(4, 64px);
+  gap: 12px;
+}
+
+.controls button {
+  width: 64px;
+  height: 64px;
+  color: #173943;
+  background: #fffdf7;
+  border-radius: 50%;
+  font-size: 1.75rem;
+}
+
+.controls .recording {
+  color: #fffdf7;
+  background: #d94a3c;
+}
+
+.result {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 4rem;
+}
+
+.understood {
+  background: #278846;
+}
+
+.not_yet {
+  background: #de8a28;
+}

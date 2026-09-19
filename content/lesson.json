@@ -1,0 +1,12 @@
+{
+  "id": "clinic",
+  "image_url": "/media/img/clinic.svg",
+  "phrase": {
+    "id": "need-interpreter",
+    "text": "I speak Rohingya. I need an interpreter.",
+    "accepted_variants": [
+      "I need an interpreter.",
+      "I need interpreter."
+    ]
+  }
+}
