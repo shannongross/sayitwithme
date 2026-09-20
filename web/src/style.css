@@ -1,102 +1,396 @@
 :root {
-  font-family: Georgia, serif;
-  color: #173943;
-  background: #e6f2ef;
+  --ground: #f1eee6;
+  --ground-recording: #f3dacd;
+  --paper: #ffffff;
+  --sunken: #ede9e0;
+  --ink: #211c16;
+  --quiet: #6f6559;
+  --rule: #ded7c9;
+  --rule-soft: #c9c0b0;
+
+  --clay: #b8532b;
+  --green: #2c6e4c;
+  --amber: #a2650f;
+
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--ground);
 }
 
 * {
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   min-width: 320px;
+  background: var(--ground);
 }
 
 button {
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
   border: 0;
   cursor: pointer;
-  font: inherit;
 }
 
-.start,
-.home,
-.card {
+/* categories */
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: center;
+  gap: 18px;
   min-height: 100dvh;
+  padding: clamp(32px, 8vh, 72px) 20px max(32px, env(safe-area-inset-bottom));
 }
 
-.start {
-  width: 100%;
-  color: #fffdf7;
-  background: #16756f;
-  font-size: 9rem;
-}
-
-.home,
-.card {
+.tile {
   display: grid;
   place-items: center;
-  padding: 24px;
+  aspect-ratio: 167 / 186;
+  background: var(--paper);
+  border: 1px solid #e3dbcd;
+  border-radius: 22px;
+  box-shadow: 0 4px 14px rgb(33 28 22 / 5%);
 }
 
-.lesson {
-  width: min(100%, 420px);
-  padding: 0;
+.tile img {
+  width: 68%;
+  height: 68%;
+  object-fit: contain;
+}
+
+/* practice */
+
+.practice {
+  --accent: var(--clay);
+  --halo: rgb(184 83 43 / 16%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100dvh;
+  padding: clamp(24px, 6vh, 56px) 20px max(28px, env(safe-area-inset-bottom));
+  background: var(--ground);
+  transition: background 200ms ease;
+}
+
+.practice[data-status="recording"] {
+  background: var(--ground-recording);
+}
+
+.practice[data-outcome="understood"] {
+  --accent: var(--green);
+  --halo: rgb(44 110 76 / 20%);
+}
+
+.practice[data-outcome="not_yet"] {
+  --accent: var(--amber);
+  --halo: rgb(162 101 15 / 20%);
+}
+
+/* every icon button on the practice screen; the sections below set sizes and colours */
+
+.round {
+  display: grid;
+  place-items: center;
+  background: var(--paper);
+  border: 2px solid var(--rule-soft);
+  border-radius: 999px;
+  transition: color 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+/* progress */
+
+.dots {
+  display: flex;
+  flex: none;
+  gap: 10px;
+  align-items: center;
+  height: 14px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #ded6c7;
+  border-radius: 999px;
+}
+
+.dot[data-here] {
+  width: 14px;
+  height: 14px;
+  background: var(--ink);
+}
+
+/* the card. Only it shrinks on a short screen, so the controls never move. */
+
+.card {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  width: 350px;
+  max-width: 100%;
+  height: clamp(248px, 44dvh, 366px);
   overflow: hidden;
-  background: #fffdf7;
-  border-radius: 8px;
+  background: var(--sunken);
+  border: 3px solid var(--rule);
+  border-radius: 26px;
+  transition: background 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
 }
 
-.lesson img,
-.scene {
-  display: block;
-  width: 100%;
+.practice[data-status="playing"] .card,
+.practice[data-outcome="not_yet"] .card {
+  background: var(--paper);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 9px var(--halo), 0 8px 24px rgb(33 28 22 / 10%);
 }
 
-.card {
-  align-content: space-between;
-  gap: 24px;
+.practice[data-status="recording"] .card {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
-.scene {
-  max-width: 560px;
-  border-radius: 8px;
+.picture {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: 16px;
 }
 
-.controls {
+.picture img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.listen {
+  display: flex;
+  flex: none;
+  gap: 28px;
+  align-items: center;
+  justify-content: center;
+  height: 96px;
+  border-top: 1px solid var(--rule);
+}
+
+.listen .round {
+  width: 72px;
+  height: 72px;
+  color: var(--quiet);
+  border-color: var(--rule-soft);
+}
+
+.practice[data-status="playing"] .listen .round,
+.practice[data-outcome="not_yet"] .listen .round {
+  color: var(--ink);
+  border-color: #dcd3c3;
+}
+
+.listen .play svg {
+  width: 30px;
+  height: 30px;
+  margin-left: 3px;
+}
+
+.listen .slow svg {
+  width: 38px;
+  height: 38px;
+}
+
+/* data-speed is only set while something is playing, so it needs no status qualifier. */
+.practice[data-speed="normal"] .play,
+.practice[data-speed="slow"] .slow,
+.practice[data-outcome="not_yet"] .slow {
+  color: var(--paper);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* the disc */
+
+.disc-slot {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 64px);
-  gap: 12px;
+  flex: none;
+  place-items: center;
+  width: 168px;
+  height: 168px;
 }
 
-.controls button {
-  width: 64px;
-  height: 64px;
-  color: #173943;
-  background: #fffdf7;
-  border-radius: 50%;
-  font-size: 1.75rem;
+.ring {
+  position: absolute;
+  inset: 0;
+  width: 168px;
+  height: 168px;
+  opacity: 0;
+  transform: rotate(-90deg);
 }
 
-.controls .recording {
-  color: #fffdf7;
-  background: #d94a3c;
+.ring-track {
+  stroke: rgb(184 83 43 / 22%);
 }
 
-.result {
+.ring-fill {
+  stroke: var(--clay);
+  stroke-dasharray: 490;
+  stroke-dashoffset: 490;
+}
+
+.practice[data-status="recording"] .ring {
+  opacity: 1;
+}
+
+/* --countdown is set from the recorder's own limit, so the two cannot drift apart. */
+.practice[data-status="recording"] .ring-fill {
+  animation: countdown var(--countdown) linear forwards;
+}
+
+@keyframes countdown {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.disc {
   display: grid;
   place-items: center;
-  width: 88px;
-  height: 88px;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 4rem;
+  width: 136px;
+  height: 136px;
+  color: #bdb4a5;
+  background: var(--sunken);
+  border: 3px solid var(--rule);
+  border-radius: 999px;
+  transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
 }
 
-.understood {
-  background: #278846;
+.disc svg {
+  width: 60px;
+  height: 60px;
 }
 
-.not_yet {
-  background: #de8a28;
+.practice[data-status="ready"] .disc {
+  color: var(--clay);
+  background: var(--paper);
+  border-color: var(--clay);
+  box-shadow: 0 0 0 9px var(--halo), 0 8px 24px rgb(184 83 43 / 20%);
+}
+
+.practice[data-status="recording"] .disc {
+  color: var(--paper);
+  background: var(--clay);
+  border-color: var(--clay);
+  box-shadow: 0 10px 26px rgb(184 83 43 / 28%);
+}
+
+.practice[data-status="recording"] .disc svg {
+  width: 72px;
+  height: 34px;
+}
+
+.practice[data-status="result"] .disc {
+  color: var(--paper);
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 9px var(--halo), 0 10px 26px rgb(33 28 22 / 18%);
+}
+
+.practice[data-status="result"] .disc svg {
+  width: 74px;
+  height: 74px;
+}
+
+.bars rect {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: speak 720ms ease-in-out infinite;
+}
+
+.bars rect:nth-child(2) {
+  animation-delay: 90ms;
+}
+
+.bars rect:nth-child(3) {
+  animation-delay: 180ms;
+}
+
+.bars rect:nth-child(4) {
+  animation-delay: 270ms;
+}
+
+.bars rect:nth-child(5) {
+  animation-delay: 120ms;
+}
+
+.bars rect:nth-child(6) {
+  animation-delay: 240ms;
+}
+
+@keyframes speak {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+/* navigation */
+
+.nav {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 350px;
+  max-width: 100%;
+  height: 56px;
+}
+
+.nav .round {
+  width: 56px;
+  height: 56px;
+  color: var(--ink);
+  border-color: #d8cfbe;
+}
+
+.nav .round svg {
+  width: 28px;
+  height: 28px;
+}
+
+.practice[data-outcome="understood"] .forward {
+  color: var(--paper);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.practice[data-status="recording"] .nav {
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+/* The two animations on the page. The ring stops halfway rather than not showing at all. */
+@media (prefers-reduced-motion: reduce) {
+  .bars rect {
+    animation: none;
+  }
+
+  .practice[data-status="recording"] .ring-fill {
+    animation: none;
+    stroke-dashoffset: 245;
+  }
 }
