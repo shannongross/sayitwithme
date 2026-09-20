@@ -4,13 +4,17 @@
   --paper: #ffffff;
   --sunken: #ede9e0;
   --ink: #211c16;
+  --ink-rgb: 33 28 22;
   --quiet: #6f6559;
   --rule: #ded7c9;
   --rule-soft: #c9c0b0;
 
   --clay: #b8532b;
+  --clay-rgb: 184 83 43;
   --green: #2c6e4c;
+  --green-rgb: 44 110 76;
   --amber: #a2650f;
+  --amber-rgb: 162 101 15;
 
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   color: var(--ink);
@@ -57,9 +61,9 @@ button {
   place-items: center;
   aspect-ratio: 167 / 186;
   background: var(--paper);
-  border: 1px solid #e3dbcd;
+  border: 1px solid var(--rule);
   border-radius: 22px;
-  box-shadow: 0 4px 14px rgb(33 28 22 / 5%);
+  box-shadow: 0 4px 14px rgb(var(--ink-rgb) / 5%);
 }
 
 .tile img {
@@ -72,7 +76,7 @@ button {
 
 .practice {
   --accent: var(--clay);
-  --halo: rgb(184 83 43 / 16%);
+  --halo: rgb(var(--clay-rgb) / 16%);
 
   display: flex;
   flex-direction: column;
@@ -90,12 +94,12 @@ button {
 
 .practice[data-outcome="understood"] {
   --accent: var(--green);
-  --halo: rgb(44 110 76 / 20%);
+  --halo: rgb(var(--green-rgb) / 20%);
 }
 
 .practice[data-outcome="not_yet"] {
   --accent: var(--amber);
-  --halo: rgb(162 101 15 / 20%);
+  --halo: rgb(var(--amber-rgb) / 20%);
 }
 
 /* every icon button on the practice screen; the sections below set sizes and colours */
@@ -122,7 +126,7 @@ button {
 .dot {
   width: 10px;
   height: 10px;
-  background: #ded6c7;
+  background: var(--rule);
   border-radius: 999px;
 }
 
@@ -152,7 +156,7 @@ button {
 .practice[data-outcome="not_yet"] .card {
   background: var(--paper);
   border-color: var(--accent);
-  box-shadow: 0 0 0 9px var(--halo), 0 8px 24px rgb(33 28 22 / 10%);
+  box-shadow: 0 0 0 9px var(--halo), 0 8px 24px rgb(var(--ink-rgb) / 10%);
 }
 
 .practice[data-status="recording"] .card {
@@ -195,7 +199,7 @@ button {
 .practice[data-status="playing"] .listen .round,
 .practice[data-outcome="not_yet"] .listen .round {
   color: var(--ink);
-  border-color: #dcd3c3;
+  border-color: var(--rule);
 }
 
 .listen .play svg {
@@ -239,7 +243,7 @@ button {
 }
 
 .ring-track {
-  stroke: rgb(184 83 43 / 22%);
+  stroke: rgb(var(--clay-rgb) / 22%);
 }
 
 .ring-fill {
@@ -268,7 +272,7 @@ button {
   place-items: center;
   width: 136px;
   height: 136px;
-  color: #bdb4a5;
+  color: var(--rule-soft);
   background: var(--sunken);
   border: 3px solid var(--rule);
   border-radius: 999px;
@@ -284,14 +288,14 @@ button {
   color: var(--clay);
   background: var(--paper);
   border-color: var(--clay);
-  box-shadow: 0 0 0 9px var(--halo), 0 8px 24px rgb(184 83 43 / 20%);
+  box-shadow: 0 0 0 9px var(--halo), 0 8px 24px rgb(var(--clay-rgb) / 20%);
 }
 
 .practice[data-status="recording"] .disc {
   color: var(--paper);
   background: var(--clay);
   border-color: var(--clay);
-  box-shadow: 0 10px 26px rgb(184 83 43 / 28%);
+  box-shadow: 0 10px 26px rgb(var(--clay-rgb) / 28%);
 }
 
 .practice[data-status="recording"] .disc svg {
@@ -303,7 +307,7 @@ button {
   color: var(--paper);
   background: var(--accent);
   border-color: var(--accent);
-  box-shadow: 0 0 0 9px var(--halo), 0 10px 26px rgb(33 28 22 / 18%);
+  box-shadow: 0 0 0 9px var(--halo), 0 10px 26px rgb(var(--ink-rgb) / 18%);
 }
 
 .practice[data-status="result"] .disc svg {
@@ -364,7 +368,7 @@ button {
   width: 56px;
   height: 56px;
   color: var(--ink);
-  border-color: #d8cfbe;
+  border-color: var(--rule);
 }
 
 .nav .round svg {

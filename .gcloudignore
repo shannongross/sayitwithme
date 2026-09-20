@@ -1,23 +1,14 @@
-# What NOT to upload to Cloud Run. Its presence means .gitignore is no longer consulted,
-# so anything secret has to be named here too.
-
+# Cloud Run source uploads. Its presence means .gitignore is not consulted, so secrets go here too.
 .git/
 .github/
-.gitignore
-
 .venv/
 __pycache__/
 *.pyc
 .pytest_cache/
-*.egg-info/
-
-# The frontend deploys to Cloudflare Pages, not here.
+.ruff_cache/
 web/
-
-# Not needed to serve a request.
 tests/
 scripts/
 migrations/
 *.md
-
 .env

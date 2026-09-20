@@ -1,4 +1,4 @@
-import type { Category } from "./api";
+import { base, type Category } from "./api";
 
 export default function Categories({
   categories,
@@ -16,7 +16,7 @@ export default function Categories({
           aria-label={category.id}
           onClick={() => onPick(category.id)}
         >
-          <img src={category.image_url} alt="" />
+          <img src={base + category.image_url} alt="" />
         </button>
       ))}
     </main>

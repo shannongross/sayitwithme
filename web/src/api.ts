@@ -11,11 +11,14 @@ export type Phrase = {
 
 export type Outcome = "understood" | "not_yet";
 
+// Empty in development, where Vite proxies /api and /media to the API.
+export const base = import.meta.env.VITE_API_URL ?? "";
+
 // Nothing on screen can say "the network is down", so a read waits and asks again.
 async function read<T>(path: string): Promise<T[]> {
   for (;;) {
     try {
-      const response = await fetch(path);
+      const response = await fetch(base + path);
       if (response.ok) return await response.json();
     } catch {
       // A dropped connection and a refused request get the same treatment.
@@ -38,7 +41,7 @@ export async function postAttempt(phraseId: string, audio: Blob): Promise<Outcom
   form.append("phrase_id", phraseId);
   form.append("audio", audio, "attempt");
 
-  const response = await fetch("/api/attempts", { method: "POST", body: form });
+  const response = await fetch(base + "/api/attempts", { method: "POST", body: form });
   if (!response.ok) return "not_yet";
   return (await response.json()).result;
 }

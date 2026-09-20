@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 
-import { postAttempt, type Outcome, type Phrase } from "./api";
+import { base, postAttempt, type Outcome, type Phrase } from "./api";
 import { chime, hush, play, softTone } from "./audio";
 import { Arrow, Bars, Check, Grid, Loop, Mic, Play, Turtle } from "./icons";
 import { limit, record, type Recording } from "./recorder";
@@ -100,7 +100,7 @@ export default function Practice({
 
       <div className="card">
         <div className="picture">
-          <img src={phrase.image_url} alt="" />
+          <img src={base + phrase.image_url} alt="" />
         </div>
 
         <div className="listen">
