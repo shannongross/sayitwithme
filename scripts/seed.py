@@ -33,7 +33,6 @@ async def seed() -> None:
             VALUES ($1, $2, $3)
             ON CONFLICT (text_en_normalized) DO UPDATE
             SET category = EXCLUDED.category, image_key = EXCLUDED.image_key
-            WHERE english_phrases.contributor_id IS NULL
             """,
             row["category"],
             row["text_en"],

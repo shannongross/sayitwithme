@@ -10,5 +10,5 @@ content_dir = Path(__file__).parents[1] / "content"
 
 database_url = os.environ.get("DATABASE_URL", "")
 cors_origins = os.environ.get("CORS_ORIGINS", "http://localhost:5173").split(",")
-stt_model = os.environ.get("STT_MODEL", "gpt-4o-mini-transcribe")
-openai_api_key = os.environ.get("OPENAI_API_KEY", "")
+stt_model = os.environ.get("STT_MODEL", "gemini-3.8-flash")
+gemini_api_key = os.environ.get("GEMINI_API_KEY", "")
