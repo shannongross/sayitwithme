@@ -4,24 +4,28 @@ Practice saying English phrases out loud, without needing to read anything.
 
 Live demo: [sayitwithme.pages.dev](https://sayitwithme.pages.dev). Works best on a phone.
 
-I built this for a Rohingya family who were resettled near me. The adults had never been to
-school and do not read in any language, including their own, which is mostly a spoken one.
-They wanted enough English to get through a clinic visit or a bus ride on their own. Every
-app I tried with them assumed you could read, if not English then at least the menus in your
-first language. None of them worked for people who can't read at all.
+The motivation for this app was a Rohingya refugee family that resettled near me. I spent
+time teaching the mother English, and we ran into a wall quickly. Rohingya is primarily an
+oral language, with no widely used written form, so Google Translate and similar tools were
+of no help. Most adult English resources, Duolingo included, assume the learner can read in
+some language, and oral-only English lessons, particularly for Rohingya speakers, are
+virtually nonexistent.
 
-This app has no text on screen. The learner taps a picture, hears the phrase, repeats it, and
-receives a green check or an amber "try again".
+This app is for adults who want to learn spoken English without relying on any written
+language. Nothing on screen is text; every control is a picture, a sound or a color. Work is
+ongoing to collect audio from Rohingya volunteer translators so learners can hear each phrase
+in their own language first.
 
 ## How it works
 
-The phone records a short attempt and sends it to the API. The API transcribes it with a
-speech-to-text model, checks that the content words of the target phrase are present, and
-returns "understood" or "not yet". The recording is deleted before the response is sent. All
-feedback on the phone is color, icon and sound.
+The learner taps a picture, hears the phrase, and records an attempt. The recording is sent
+to the API, where an LLM transcribes it to text. A deterministic grader then compares that
+transcription against the key words of the target phrase; the attempt passes when every key
+word is present. The API returns "understood" or "not yet", deletes the recording, and the
+phone shows the result as a color, an icon and a sound.
 
-The stack is a React frontend, a Python API and Postgres, hosted on Google Cloud. Pictures
-come from an AAC symbol library, and every learner hears the same English voice.
+The frontend is React, the API is Python, and content lives in Postgres, all hosted on
+Google Cloud. Pictures come from an AAC symbol library.
 
 ## Choices that shaped it
 
