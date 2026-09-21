@@ -3,8 +3,6 @@ CREATE TABLE contributors (
   name         TEXT NOT NULL,
   email        TEXT NOT NULL UNIQUE,
   languages    TEXT[] NOT NULL,
-  note         TEXT,
-  token_hash   TEXT UNIQUE,
   approved_at  TIMESTAMPTZ,
   created_at   TIMESTAMPTZ NOT NULL DEFAULT now()
 );
@@ -16,7 +14,6 @@ CREATE TABLE english_phrases (
   text_en_normalized  TEXT GENERATED ALWAYS AS
                         (lower(btrim(regexp_replace(text_en, '[^a-zA-Z0-9]+', ' ', 'g')))) STORED,
   image_key           TEXT NOT NULL,
-  contributor_id      UUID REFERENCES contributors(id),
   removed_at          TIMESTAMPTZ,
   created_at          TIMESTAMPTZ NOT NULL DEFAULT now()
 );
