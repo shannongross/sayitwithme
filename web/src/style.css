@@ -52,7 +52,9 @@ button {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-content: center;
   gap: 18px;
+  max-width: 390px;
   min-height: 100dvh;
+  margin: 0 auto;
   padding: clamp(32px, 8vh, 72px) 20px max(32px, env(safe-area-inset-bottom));
 }
 
@@ -240,6 +242,8 @@ button {
   height: 168px;
   opacity: 0;
   transform: rotate(-90deg);
+  /* Painted over the disc, so taps must fall through to it. */
+  pointer-events: none;
 }
 
 .ring-track {

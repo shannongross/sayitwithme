@@ -6,18 +6,17 @@ import asyncpg
 from api import config
 from api.text import slug
 
-images = config.content_dir / "media" / "img"
-
 
 def image_key(text: str) -> str | None:
-    for path in sorted(images.glob(f"{slug(text)}.*")):
+    for path in sorted(config.images_dir.glob(f"{slug(text)}.*")):
         return f"img/{path.name}"
     return None
 
 
 async def seed() -> None:
-    path = config.content_dir / "phrases.csv"
-    rows = list(csv.DictReader(path.read_text(encoding="utf-8").splitlines()))
+    rows = list(
+        csv.DictReader(config.phrases_csv.read_text(encoding="utf-8").splitlines())
+    )
     pool = await asyncpg.create_pool(config.database_url)
 
     loaded, waiting = 0, []

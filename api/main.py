@@ -27,9 +27,7 @@ app.add_middleware(
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
-app.mount(
-    "/media", StaticFiles(directory=config.content_dir / "media"), name="media"
-)
+app.mount("/media", StaticFiles(directory=config.media_dir), name="media")
 
 
 @app.get("/api/categories")

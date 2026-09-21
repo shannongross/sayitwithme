@@ -7,9 +7,6 @@ import httpx
 from api import config
 from api.text import slug
 
-images = config.content_dir / "media" / "img"
-manifest = config.content_dir / "media" / "MANIFEST.csv"
-
 base_url = "https://globalsymbols.com/api/v1"
 # One visual family only: a mixed-style set reads worse than a smaller consistent one.
 symbolsets = ["mulberry", "additional-mulberry-symbols", "corona-symbols"]
@@ -38,16 +35,17 @@ def find(client: httpx.Client, word: str) -> tuple[str, dict] | None:
 
 
 def fetch() -> None:
-    path = config.content_dir / "phrases.csv"
-    rows = list(csv.DictReader(path.read_text(encoding="utf-8").splitlines()))
-    images.mkdir(parents=True, exist_ok=True)
+    rows = list(
+        csv.DictReader(config.phrases_csv.read_text(encoding="utf-8").splitlines())
+    )
+    config.images_dir.mkdir(parents=True, exist_ok=True)
 
-    have = {p.stem for p in images.iterdir() if p.is_file()}
+    have = {p.stem for p in config.images_dir.iterdir() if p.is_file()}
     downloaded, missing = 0, []
 
-    fresh = not manifest.exists()
+    fresh = not config.manifest.exists()
     with (
-        manifest.open("a", encoding="utf-8", newline="") as handle,
+        config.manifest.open("a", encoding="utf-8", newline="") as handle,
         httpx.Client(timeout=30, follow_redirects=True) as client,
     ):
         record = csv.writer(handle)
@@ -68,7 +66,7 @@ def fetch() -> None:
             symbolset, hit = match
             url = hit["picto"]["image_url"]
             file = f"{name}{Path(url).suffix or '.svg'}"
-            (images / file).write_bytes(client.get(url).content)
+            (config.images_dir / file).write_bytes(client.get(url).content)
 
             # Written per download so a crash leaves files and attribution in step.
             record.writerow([file, word, symbolset, "CC BY-SA 4.0", url])
