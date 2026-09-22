@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 
 import { base, postAttempt, type Outcome, type Phrase } from "./api";
-import { chime, hush, play, softTone } from "./audio";
+import { chime, fanfare, hush, play, softTone } from "./audio";
 import { Arrow, Bars, Check, Grid, Loop, Mic, Play, Turtle } from "./icons";
 import { limit, record, type Recording } from "./recorder";
 
@@ -9,7 +9,8 @@ type Status =
   | { kind: "playing"; slow: boolean }
   | { kind: "ready" }
   | { kind: "recording" }
-  | { kind: "result"; outcome: Outcome };
+  | { kind: "result"; outcome: Outcome }
+  | { kind: "finished" };
 
 const pause = 1_400;
 
@@ -22,6 +23,7 @@ export default function Practice({
 }) {
   const [index, setIndex] = useState(0);
   const [status, setStatus] = useState<Status>({ kind: "playing", slow: false });
+  const [understood, setUnderstood] = useState(new Set<number>());
   const recording = useRef<Recording | null>(null);
   const phrase = phrases[index];
 
@@ -41,10 +43,12 @@ export default function Practice({
     if (index + 1 < phrases.length) {
       setIndex(index + 1);
       setStatus({ kind: "playing", slow: false });
+    } else if (understood.size > 0) {
+      setStatus({ kind: "finished" });
     } else {
       onExit();
     }
-  }, [index, phrases.length, onExit]);
+  }, [index, phrases.length, understood, onExit]);
 
   useEffect(() => {
     if (status.kind !== "result") return;
@@ -55,6 +59,13 @@ export default function Practice({
     }, pause);
     return () => window.clearTimeout(timer);
   }, [status, next]);
+
+  useEffect(() => {
+    if (status.kind !== "finished") return;
+    fanfare();
+    const timer = window.setTimeout(onExit, 2_200);
+    return () => window.clearTimeout(timer);
+  }, [status, onExit]);
 
   async function pressDisc() {
     if (status.kind === "recording") {
@@ -72,13 +83,33 @@ export default function Practice({
       recording.current = null;
 
       const outcome = await postAttempt(phrase.id, audio);
-      if (outcome === "understood") chime();
-      else softTone();
+      if (outcome === "understood") {
+        chime();
+        setUnderstood((seen) => new Set(seen).add(index));
+      } else {
+        softTone();
+      }
       setStatus({ kind: "result", outcome });
     } catch {
       recording.current = null;
       setStatus({ kind: "ready" });
     }
+  }
+
+  if (status.kind === "finished") {
+    return (
+      <main className="finish">
+        <div className="seal">
+          <svg className="seal-ring" viewBox="0 0 76 76" aria-hidden focusable="false">
+            <circle className="seal-track" cx="38" cy="38" r="33" strokeWidth={5} />
+            <circle className="seal-fill" cx="38" cy="38" r="33" strokeWidth={5} strokeLinecap="round" />
+          </svg>
+          <span className="seal-mark">
+            <Check />
+          </span>
+        </div>
+      </main>
+    );
   }
 
   const speed = status.kind === "playing" ? (status.slow ? "slow" : "normal") : undefined;
@@ -94,7 +125,12 @@ export default function Practice({
     >
       <div className="dots">
         {phrases.map((item, position) => (
-          <span key={item.id} className="dot" data-here={position === index || undefined} />
+          <span
+            key={item.id}
+            className="dot"
+            data-here={position === index || undefined}
+            data-done={understood.has(position) || undefined}
+          />
         ))}
       </div>
 

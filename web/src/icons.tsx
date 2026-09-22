@@ -6,16 +6,14 @@ export function Play() {
   );
 }
 
+// Turtle from Lucide (lucide.dev), ISC licence, copyright Lucide Contributors.
 export function Turtle() {
   return (
-    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M8 20.5h16" />
-      <path d="M8 20.5a8 6.5 0 0 1 16 0" />
-      <path d="M12.5 15v5.5M19.5 15v5.5" />
-      <circle cx="27" cy="18.2" r="3" />
-      <circle cx="28.2" cy="17.3" r="0.9" fill="currentColor" stroke="none" />
-      <path d="M11 20.5v3.5M21 20.5v3.5" />
-      <path d="M8 20.5 5 23" />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="m12 10 2 4v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3a8 8 0 1 0-16 0v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3l2-4h4Z" />
+      <path d="M4.82 7.9 8 10" />
+      <path d="M15.18 7.9 12 10" />
+      <path d="M16.93 10H20a2 2 0 0 1 0 4H2" />
     </svg>
   );
 }

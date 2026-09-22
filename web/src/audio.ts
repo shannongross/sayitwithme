@@ -36,6 +36,12 @@ export function softTone() {
   tone(349.23, 0.3);
 }
 
+export function fanfare() {
+  tone(659.25, 0.18);
+  tone(783.99, 0.18, 0.16);
+  tone(1046.5, 0.5, 0.32);
+}
+
 function tone(frequency: number, length: number, delay = 0) {
   if (context === null) return;
   const start = context.currentTime + delay;
