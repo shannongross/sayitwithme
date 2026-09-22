@@ -50,7 +50,7 @@ def fetch() -> None:
     ):
         record = csv.writer(handle)
         if fresh:
-            record.writerow(["file", "text_en", "symbolset", "license", "source_url"])
+            record.writerow(["file", "text_en", "source", "license", "detail"])
 
         for row in rows:
             word = row["text_en"]

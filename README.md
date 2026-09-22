@@ -25,14 +25,17 @@ word is present. The API returns "understood" or "not yet", deletes the recordin
 phone shows the result as a color, an icon and a sound.
 
 The frontend is React, the API is Python, and content lives in Postgres, all hosted on
-Google Cloud. Pictures come from an AAC symbol library.
+Google Cloud. Single words are illustrated with AAC symbols; full phrases use generated scene
+illustrations, each reviewed by hand before it is used.
 
 ## Choices that shaped it
 
-**The pictures are AAC symbols.** AAC (augmentative and alternative communication) is the
-field of tools for people who can't rely on speech or text, and its symbol libraries are large
-sets of simple pictograms, one per word or idea, with a consistent style and a plain label on
-each.
+**Words use AAC symbols; phrases use generated scenes.** AAC (augmentative and alternative
+communication) is the field of tools for people who can't rely on speech or text, and its
+symbol libraries are large sets of simple pictograms, one per word, with a consistent style
+and a plain label on each. A sentence like "I need an interpreter" has no symbol, so phrases
+get a generated illustration in one fixed style, and every one is checked by eye before it
+is used.
 
 **Rohingya audio will come from Rohingya speakers.** The plan is for volunteers to record
 each phrase in their own language so a learner can hear the meaning first.
@@ -48,7 +51,8 @@ transcription service hears the audio, evaluates performance, and discards recor
 
 ## Licensing
 
-The code is MIT. The pictograms in `content/media/img` are not: they come from
-[Global Symbols](https://globalsymbols.com) under CC BY-SA 4.0, and `content/media/MANIFEST.csv`
-records the source, symbol set and license of every file. Credit Global Symbols if you reuse
-them, and share any modified pictogram under the same license.
+The code is MIT. The word pictograms in `content/media/img` are not: they come from
+[Global Symbols](https://globalsymbols.com) under CC BY-SA 4.0. `content/media/MANIFEST.csv`
+records the source and license of every image, including the prompt for each generated
+one. Credit Global Symbols if you reuse their pictograms, and share any modified pictogram
+under the same license.

@@ -1,122 +1,122 @@
-category,text_en
-essential,help
-essential,please
-essential,hot
-essential,cold
-essential,open
-essential,closed
-food,water
-food,bread
-food,rice
-food,milk
-food,egg
-food,meat
-food,fish
-food,chicken
-food,tea
-food,salt
-food,fruit
-body,head
-body,eye
-body,ear
-body,nose
-body,mouth
-body,tooth
-body,hand
-body,arm
-body,leg
-body,foot
-body,back
-body,stomach
-body,hair
-family,son
-family,daughter
-family,baby
-family,brother
-family,sister
-family,wife
-family,husband
-home,door
-home,window
-home,chair
-home,table
-home,key
-home,light
-home,soap
-home,towel
-home,blanket
-home,clock
-home,toilet
-clothes,shirt
-clothes,pants
-clothes,shoes
-clothes,socks
-clothes,coat
-clothes,dress
-clothes,scarf
-clothes,glasses
-places,school
-places,bank
-places,bus
-places,train
-places,house
-numbers,one
-numbers,two
-numbers,three
-numbers,four
-numbers,five
-numbers,six
-numbers,seven
-numbers,eight
-numbers,nine
-numbers,ten
-numbers,eleven
-numbers,twelve
-numbers,thirteen
-numbers,fourteen
-numbers,fifteen
-numbers,sixteen
-numbers,seventeen
-numbers,eighteen
-numbers,nineteen
-numbers,twenty
-numbers,thirty
-numbers,forty
-numbers,fifty
-numbers,sixty
-numbers,seventy
-numbers,eighty
-numbers,ninety
-numbers,hundred
-numbers,thousand
-money,money
-money,quarter
-money,pay
-money,card
-money,more
-money,half
-money,wallet
-clinic,I speak Rohingya. I need an interpreter.
-clinic,I have an appointment.
-clinic,I need to see a doctor.
-clinic,My child is sick.
-clinic,It hurts here.
-clinic,Where is the bathroom?
-bus,Where is the bus stop?
-bus,Is this the right bus?
-bus,How much is the ticket?
-bus,I need to go here.
-bus,Please tell me my stop.
-bus,What time is the next bus?
-grocery,How much is this?
-grocery,Where is the rice?
-grocery,Do you have halal meat?
-grocery,I need a bag.
-grocery,Can I pay with cash?
-grocery,Where do I pay?
-school,I am here for my child.
-school,Where is the classroom?
-school,I need to speak to the teacher.
-school,My child is absent today.
-school,Please read this to me.
-school,When does school end?
+category,text_en,scene
+essential,help,
+essential,please,
+essential,hot,
+essential,cold,
+essential,open,
+essential,closed,
+food,water,
+food,bread,
+food,rice,
+food,milk,
+food,egg,
+food,meat,
+food,fish,
+food,chicken,
+food,tea,
+food,salt,
+food,fruit,
+body,head,
+body,eye,
+body,ear,
+body,nose,
+body,mouth,
+body,tooth,
+body,hand,
+body,arm,
+body,leg,
+body,foot,
+body,back,
+body,stomach,
+body,hair,
+family,son,
+family,daughter,
+family,baby,
+family,brother,
+family,sister,
+family,wife,
+family,husband,
+home,door,
+home,window,
+home,chair,
+home,table,
+home,key,
+home,light,
+home,soap,
+home,towel,
+home,blanket,
+home,clock,
+home,toilet,
+clothes,shirt,
+clothes,pants,
+clothes,shoes,
+clothes,socks,
+clothes,coat,
+clothes,dress,
+clothes,scarf,
+clothes,glasses,
+places,school,
+places,bank,
+places,bus,
+places,train,
+places,house,
+numbers,one,
+numbers,two,
+numbers,three,
+numbers,four,
+numbers,five,
+numbers,six,
+numbers,seven,
+numbers,eight,
+numbers,nine,
+numbers,ten,
+numbers,eleven,
+numbers,twelve,
+numbers,thirteen,
+numbers,fourteen,
+numbers,fifteen,
+numbers,sixteen,
+numbers,seventeen,
+numbers,eighteen,
+numbers,nineteen,
+numbers,twenty,
+numbers,thirty,
+numbers,forty,
+numbers,fifty,
+numbers,sixty,
+numbers,seventy,
+numbers,eighty,
+numbers,ninety,
+numbers,hundred,
+numbers,thousand,
+money,money,
+money,quarter,
+money,pay,
+money,card,
+money,more,
+money,half,
+money,wallet,
+clinic,I speak Rohingya. I need an interpreter.,"A woman at a clinic reception desk with one hand on her chest, the receptionist holding a telephone handset out toward her."
+clinic,I have an appointment.,"A woman at a clinic reception desk pointing at a wall clock, the receptionist looking at a computer screen."
+clinic,I need to see a doctor.,"A woman holding her stomach with a pained face, facing a doctor in a white coat with a stethoscope."
+clinic,My child is sick.,"A woman holding a small child wrapped in a blanket, the child's cheeks flushed, facing a nurse."
+clinic,It hurts here.,"A woman pointing to her lower back with a pained face, a doctor looking on."
+clinic,Where is the bathroom?,"A woman in a clinic hallway asking a staff member, who points toward a door marked only with a toilet pictogram."
+bus,Where is the bus stop?,"A woman on a sidewalk asking a passerby, who points toward a bus stop pole with a bus approaching in the distance."
+bus,Is this the right bus?,"A woman standing at the open front door of a city bus, looking up at the driver with a questioning expression."
+bus,How much is the ticket?,A woman at the front of a city bus holding out a few coins on her palm toward the driver.
+bus,I need to go here.,A woman at the front of a city bus showing the driver a small paper with a simple map and a red location pin drawn on it.
+bus,Please tell me my stop.,"A woman seated near the front of a city bus leaning toward the driver, one hand raised gently."
+bus,What time is the next bus?,A woman at a bus stop tapping her wristwatch while asking another person waiting there.
+grocery,How much is this?,A woman in a grocery aisle holding up a bag of rice toward a store worker in an apron.
+grocery,Where is the rice?,"A woman asking a store worker in an apron, who points toward shelves stacked with sacks of rice."
+grocery,Do you have halal meat?,"A woman at a grocery meat counter asking the butcher, who holds up a wrapped package of meat with a small green crescent label."
+grocery,I need a bag.,"A woman at a grocery checkout with groceries on the belt, gesturing toward a folded paper bag beside the cashier."
+grocery,Can I pay with cash?,A woman at a grocery checkout holding out a few banknotes toward the cashier.
+grocery,Where do I pay?,"A woman holding a shopping basket asking a store worker, who points toward the checkout lanes."
+school,I am here for my child.,"A woman at a school front office desk, a small child visible waving from a classroom doorway behind."
+school,Where is the classroom?,"A woman in a school hallway asking a teacher, who points down the hall toward a classroom door."
+school,I need to speak to the teacher.,"A woman standing at a classroom door, a teacher stepping toward her from beside a chalkboard with no writing on it."
+school,My child is absent today.,"A woman at a school office desk speaking to the secretary, an empty child-sized desk visible through the doorway."
+school,Please read this to me.,"A woman handing an envelope to a teacher, who has opened the letter and is reading it aloud to her."
+school,When does school end?,"A woman at a school gate pointing at a round clock on the school wall, a teacher answering her."

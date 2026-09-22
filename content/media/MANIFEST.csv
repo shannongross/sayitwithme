@@ -1,4 +1,4 @@
-file,text_en,symbolset,license,source_url
+file,text_en,source,license,detail
 help.svg,help,mulberry,CC BY-SA 4.0,https://globalsymbols.com/uploads/production/image/imagefile/49199/13_49200_9c829aa0-b3e6-4532-a191-dc47cfe67dd2.svg
 hot.svg,hot,mulberry,CC BY-SA 4.0,https://globalsymbols.com/uploads/production/image/imagefile/4799/13_4799_16ff02c4-642d-4d88-b83d-e5753a73dd2f.svg
 cold.png,cold,additional-mulberry-symbols,CC BY-SA 4.0,https://globalsymbols.com/uploads/production/image/imagefile/80882/205_80883_7939f1b1-4361-48b4-91b5-7e70d5c89fe0.png
@@ -87,3 +87,27 @@ pay.png,pay,additional-mulberry-symbols,CC BY-SA 4.0,https://globalsymbols.com/u
 card.svg,card,mulberry,CC BY-SA 4.0,https://globalsymbols.com/uploads/production/image/imagefile/3480/13_3480_ec11ffb5-902c-46da-8d03-9eda3f098438.svg
 half.svg,half,mulberry,CC BY-SA 4.0,https://globalsymbols.com/uploads/production/image/imagefile/4711/13_4711_e133d0df-7acd-48bf-b00a-f9ea73fbafc2.svg
 wallet.svg,wallet,mulberry,CC BY-SA 4.0,https://globalsymbols.com/uploads/production/image/imagefile/6116/13_6116_66d5502e-beb6-48b6-b3b1-c584102c9e10.svg
+i-speak-rohingya-i-need-an-interpreter.png,I speak Rohingya. I need an interpreter.,gemini-3.1-flash-image,generated,"A woman at a clinic reception desk with one hand on her chest, the receptionist holding a telephone handset out toward her."
+i-have-an-appointment.png,I have an appointment.,gemini-3.1-flash-image,generated,"A woman at a clinic reception desk pointing at a wall clock, the receptionist looking at a computer screen."
+i-need-to-see-a-doctor.png,I need to see a doctor.,gemini-3.1-flash-image,generated,"A woman holding her stomach with a pained face, facing a doctor in a white coat with a stethoscope."
+my-child-is-sick.png,My child is sick.,gemini-3.1-flash-image,generated,"A woman holding a small child wrapped in a blanket, the child's cheeks flushed, facing a nurse."
+it-hurts-here.png,It hurts here.,gemini-3.1-flash-image,generated,"A woman pointing to her lower back with a pained face, a doctor looking on."
+where-is-the-bathroom.png,Where is the bathroom?,gemini-3.1-flash-image,generated,"A woman in a clinic hallway asking a staff member, who points toward a door marked only with a toilet pictogram."
+where-is-the-bus-stop.png,Where is the bus stop?,gemini-3.1-flash-image,generated,"A woman on a sidewalk asking a passerby, who points toward a bus stop pole with a bus approaching in the distance."
+is-this-the-right-bus.png,Is this the right bus?,gemini-3.1-flash-image,generated,"A woman standing at the open front door of a city bus, looking up at the driver with a questioning expression."
+how-much-is-the-ticket.png,How much is the ticket?,gemini-3.1-flash-image,generated,A woman at the front of a city bus holding out a few coins on her palm toward the driver.
+i-need-to-go-here.png,I need to go here.,gemini-3.1-flash-image,generated,A woman at the front of a city bus showing the driver a small paper with a simple map and a red location pin drawn on it.
+please-tell-me-my-stop.png,Please tell me my stop.,gemini-3.1-flash-image,generated,"A woman seated near the front of a city bus leaning toward the driver, one hand raised gently."
+what-time-is-the-next-bus.png,What time is the next bus?,gemini-3.1-flash-image,generated,A woman at a bus stop tapping her wristwatch while asking another person waiting there.
+how-much-is-this.png,How much is this?,gemini-3.1-flash-image,generated,A woman in a grocery aisle holding up a bag of rice toward a store worker in an apron.
+where-is-the-rice.png,Where is the rice?,gemini-3.1-flash-image,generated,"A woman asking a store worker in an apron, who points toward shelves stacked with sacks of rice."
+do-you-have-halal-meat.png,Do you have halal meat?,gemini-3.1-flash-image,generated,"A woman at a grocery meat counter asking the butcher, who holds up a wrapped package of meat with a small green crescent label."
+i-need-a-bag.png,I need a bag.,gemini-3.1-flash-image,generated,"A woman at a grocery checkout with groceries on the belt, gesturing toward a folded paper bag beside the cashier."
+can-i-pay-with-cash.png,Can I pay with cash?,gemini-3.1-flash-image,generated,A woman at a grocery checkout holding out a few banknotes toward the cashier.
+where-do-i-pay.png,Where do I pay?,gemini-3.1-flash-image,generated,"A woman holding a shopping basket asking a store worker, who points toward the checkout lanes."
+i-am-here-for-my-child.png,I am here for my child.,gemini-3.1-flash-image,generated,"A woman at a school front office desk, a small child visible waving from a classroom doorway behind."
+where-is-the-classroom.png,Where is the classroom?,gemini-3.1-flash-image,generated,"A woman in a school hallway asking a teacher, who points down the hall toward a classroom door."
+i-need-to-speak-to-the-teacher.png,I need to speak to the teacher.,gemini-3.1-flash-image,generated,"A woman standing at a classroom door, a teacher stepping toward her from beside a chalkboard with no writing on it."
+my-child-is-absent-today.png,My child is absent today.,gemini-3.1-flash-image,generated,"A woman at a school office desk speaking to the secretary, an empty child-sized desk visible through the doorway."
+please-read-this-to-me.png,Please read this to me.,gemini-3.1-flash-image,generated,"A woman handing an envelope to a teacher, who has opened the letter and is reading it aloud to her."
+when-does-school-end.png,When does school end?,gemini-3.1-flash-image,generated,"A woman at a school gate pointing at a round clock on the school wall, a teacher answering her."
